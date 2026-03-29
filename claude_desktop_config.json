@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "gcp-llm-training": {
+      "command": "python",
+      "args": ["D:\\dev\\xampp\\htdocs\\LLM-v2\\cloud\\providers\\gcp.py"],
+      "env": {
+        "PYTHONUNBUFFERED": "1"
+      }
+    }
+  }
+}

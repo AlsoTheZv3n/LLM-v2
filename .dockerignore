@@ -1,0 +1,13 @@
+.env
+gcp-agent-key.json
+.git
+.claude
+__pycache__
+runs/
+data/
+weights/
+legacy/
+*.safetensors
+*.bin
+*.gguf
+wandb/

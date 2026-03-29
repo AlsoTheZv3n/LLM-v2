@@ -1,0 +1,29 @@
+# LLM Pre-Training Project — Dependencies
+# Install: pip install -r requirements.txt
+
+# Core Training
+torch>=2.1.0
+tiktoken>=0.5.0
+
+# Datasets
+datasets>=2.14.0
+
+# Experiment Tracking
+wandb>=0.15.0
+
+# GCP
+google-cloud-compute>=1.14.0
+google-auth>=2.23.0
+paramiko>=3.3.0
+
+# Notion
+requests>=2.31.0
+
+# Visualization
+matplotlib>=3.7.0
+
+# Environment
+python-dotenv>=1.0.0
+
+# MCP Server
+mcp>=1.0.0

@@ -1,0 +1,52 @@
+services:
+  training:
+    build: .
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    env_file:
+      - .env
+    volumes:
+      - ./runs:/app/runs
+      - ./data:/data/tokenized
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    command: ["training/train.py", "--config", "1b", "--no-plot", "--wandb"]
+
+  tokenize:
+    build: .
+    runtime: nvidia
+    env_file:
+      - .env
+    volumes:
+      - ./data:/data/tokenized
+    command: ["training/tokenize_data.py", "--all", "--output", "/data/tokenized/"]
+    profiles:
+      - tokenize
+
+  telegram-bot:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - ./runs:/app/runs
+    command: ["infra/telegram_bot.py"]
+    restart: unless-stopped
+    profiles:
+      - bot
+
+  monitor:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - ./runs:/app/runs
+    command: ["agents/monitoring_agent.py", "start"]
+    restart: unless-stopped
+    profiles:
+      - monitor

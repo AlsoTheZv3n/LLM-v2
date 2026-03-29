@@ -1,0 +1,51 @@
+# Secrets & Credentials
+.env
+gcp-agent-key.json
+*.pem
+*.key
+*.p12
+
+# Claude Code
+.claude/
+CLAUDE.md
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Training outputs
+runs/
+data/
+weights/
+*.bin
+*.safetensors
+*.gguf
+*.ckpt
+*.pt
+
+# Logs
+*.jsonl
+wandb/
+
+# Docker
+.docker-env
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# HuggingFace cache
+.cache/
