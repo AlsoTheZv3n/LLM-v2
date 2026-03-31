@@ -66,7 +66,7 @@ CONFIGS = {
     "small":  dict(V=TIKTOKEN_VOCAB, T=256,  L=6,  H=8,  C=512,  B=8,  steps=10000),
     "medium": dict(V=TIKTOKEN_VOCAB, T=512,  L=12, H=12, C=768,  B=4,  steps=20000),
     "large":  dict(V=TIKTOKEN_VOCAB, T=1024, L=24, H=16, C=1024, B=2,  steps=50000),
-    "local":  dict(V=TIKTOKEN_VOCAB, T=512,  L=24, H=16, C=1024, B=2,  steps=100000, grad_ckpt=True),
+    "local":  dict(V=TIKTOKEN_VOCAB, T=512,  L=24, H=16, C=1024, B=2,  steps=300000, grad_ckpt=True),
     "1b":     dict(V=TIKTOKEN_VOCAB, T=2048, L=24, H=16, C=2048, B=4,  steps=300000, grad_ckpt=True),
 }
 
